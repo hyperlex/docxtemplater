@@ -66,7 +66,9 @@ function () {
         throwContentMustBeString(_typeof(content));
       }
 
-      this.content = content.replace('<w:sym w:font="Symbol" w:char="F07B"/>', '{').replace('<w:sym w:font="Symbol" w:char="F07D"/>', '}');
+      var replaced = content.replace(/<w:sym w:font="Symbol" w:char="F07B"\/>/g, '{').replace(/<w:sym w:font="Symbol" w:char="F07D"\/>/g, '}');
+      console.log(replaced);
+      this.content = replaced;
     }
   }, {
     key: "setTags",
