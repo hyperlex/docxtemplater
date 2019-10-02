@@ -31,7 +31,9 @@ module.exports = class XmlTemplater {
 		if (typeof content !== "string") {
 			throwContentMustBeString(typeof content);
 		}
-		this.content = content.replace(/<w:sym w:font="Symbol" w:char="F07B"\/>/g, '{').replace(/<w:sym w:font="Symbol" w:char="F07D"\/>/g, '}');
+		const replaced = content.replace(/<w:sym w:font="Symbol" w:char="F07B"\/>/g, '{').replace(/<w:sym w:font="Symbol" w:char="F07D"\/>/g, '}');
+		console.log(replaced);
+		this.content = replaced;
 	}
 	setTags(tags) {
 		this.tags = tags != null ? tags : {};
